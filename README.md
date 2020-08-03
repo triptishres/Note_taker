@@ -14,5 +14,5 @@ Below is the screenshot of the app
 ![Screen Shot 2020-08-03 at 9 21 47 pm](https://user-images.githubusercontent.com/65053335/89177997-fdba1a00-d5cf-11ea-9105-037c99cfee20.png)
 
 
-License
-This application uses MIT License
+## License
+MIT License
