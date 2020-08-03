@@ -45,8 +45,8 @@ app.delete("/api/notes/:id", (req, res) => {
             dbJSON.splice(i, 1);
         }
     }
-    writeToFile("/db/db.json", JSON.stringify(dbJSON));
-    res.json(dbJSON);
+    writeToFile("./db/db.json", JSON.stringify(dbJSON));
+    res.send(dbJSON);
 
 })
 
