@@ -19,11 +19,6 @@ app.get("/notes", (req, res) => {
     res.sendFile(path.resolve(__dirname, "public/notes.html"));
 });
 
-// Index HTML route 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "public/index.html"));
-});
-
 // GET Routes 
 
 app.get("/api/notes", (req, res) => {
@@ -55,6 +50,18 @@ app.delete("/api/notes/:id", (req, res) => {
 
 })
 
+
+// Index HTML route 
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "public/index.html"));
+});
+
+
+// Listening on port
+app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT + " Enjoy!");
+});
+
 // Writing to file
 
 function writeToFile(fileName, data) {
@@ -65,8 +72,3 @@ function writeToFile(fileName, data) {
         console.log("Successful");
     });
 }
-
-// Listening on port
-app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT + " Enjoy!");
-});
