@@ -41,14 +41,14 @@ app.post("/api/notes", (req, res) => {
 app.delete("/api/notes/:id", (req, res) => {
     console.log(req.params.id);
     for (let i = 0; i < dbJSON.length; i++) {
-        if (dbJSON[1].id === req.params.id) {
+        if (dbJSON[i].id === req.params.id) {
             dbJSON.splice(i, 1);
         }
     }
     writeToFile("./db/db.json", JSON.stringify(dbJSON));
-    res.send(dbJSON);
+    res.json(dbJSON);
 
-})
+});
 
 
 // Index HTML route 
@@ -69,6 +69,6 @@ function writeToFile(fileName, data) {
         if (err) {
             throw err;
         }
-        console.log("Successful");
+        console.log("Success");
     });
 }
