@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 8080;
 
 // Setting up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(express.static("public"));
+app.use(express.json());
 
 // Notes HTML route 
 app.get("/notes", (req, res) => {
@@ -33,7 +33,7 @@ app.get("/api/notes", (req, res) => {
 
 // POST Routes
 
-app.post("/api/notes.html", (req, res) => {
+app.post("/api/notes", (req, res) => {
     req.body.id = uuidv4();
     dbJSON.push(req.body);
     writeToFile("./db/db.json", JSON.stringify(dbJSON));
